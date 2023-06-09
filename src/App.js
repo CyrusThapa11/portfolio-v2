@@ -11,13 +11,13 @@ function App() {
   return (
     <div className=" lg:px-20 md:px-10 lg:py-8 md:py-3 px-3 py-3 bg-black-dark min-h-[100vh] ">
       <AnimatedCursor
-        innerSize={15}
+        innerSize={10}
         outerSize={35}
         innerScale={1}
         outerScale={1.5}
         outerAlpha={0}
         outerStyle={{
-          border: "5px solid #fff",
+          border: "2px solid #fff",
         }}
         innerStyle={{
           backgroundColor: "#fff",
