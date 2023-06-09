@@ -1,15 +1,25 @@
 import React from "react";
 import Sidebar from "../Components/Sidebar";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
+  const handleType = (count) => {
+    // access word count number
+    console.log(count);
+  };
+
+  const handleDone = () => {
+    console.log(`Done after 5 loops!`);
+  };
+
   return (
     <>
       <>
-        <div className="  min-w-full min-h-screen grid grid-cols-12 gap-1 grid-rows-1 overflow-y-hidden">
-          <div className="col-span-2">
+        <div className="w-full min-h-[100vh] overflow-auto ">
+          <div className="w-1/6 fixed top-[50%] translate-y-[-50%]  ">
             <Sidebar />
           </div>
-          <div className="col-span-9  p-2  ">
+          <div className="w-4/6  mx-auto h-auto  p-2 my-8">
             <div className="  my-5 h-[70%] flex justify-between flex-col md:flex-row ">
               {/* <Sidebar /> */}
               <div className="   md:w-[60%] sm:w-[40vw] w-[50vw] ">
@@ -41,15 +51,32 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className=" my-5  ">
+            <div className=" my-20  ">
               {/* <Sidebar /> */}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae aut veniam rem, facere iure quae consequuntur est et!
-              Optio, qui!
+              <h2 className=" text-2xl text-green-neon ">I'm a </h2>
+              <h1 className=" text-3xl ">
+                <Typewriter
+                  words={[
+                    "Full Stack Web Developer",
+                    "Blockchain Dapp Developer",
+                    "Competitve Programmer",
+                    "Mobile Application developer ",
+                  ]}
+                  loop={5}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                  onLoopDone={handleDone}
+                  onType={handleType}
+                />
+              </h1>
             </div>
           </div>
         </div>
       </>
+      <></>
     </>
   );
 };
